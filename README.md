@@ -1,4 +1,4 @@
-#Hackaton Project
+#Hackathon Project
 
 Authors:
 
