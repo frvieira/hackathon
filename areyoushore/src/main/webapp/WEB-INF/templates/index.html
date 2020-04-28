@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <title>RUSHore</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,16 +20,24 @@
 <header class="header-site w3-center"  style="padding:250px 16px">
     <img class="frontpage-logo" src="../lib/coollogo_com-115821281.png" height="144" width="545"/>
     <p class="frontpage-slogan">FIND THE SAFEST BEACH AROUND YOU</p>
-    <button onclick="window.location.href = 'https://www.google.pt/search?source=hp&ei=YE-oXq_LLsOoa8adtYgO&q=beaches&oq=beaches&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAEIMBOgQIABADOgQIABAKUMFKWNRTYOtXaABwAHgAgAFmiAHMBJIBAzYuMZgBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwiv-9ipu4vpAhVD1BoKHcZODeEQ4dUDCAY&uact=5'" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Check Beaches</button>
-    <button onclick="window.location.href = ''" class="w3-button login-button">Login</button>
-</header>
+    <!-- <button onclick="window.location.href = 'http://www.google.com/search?q=beach'" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Check Beaches</button>-->
+     <div  class="w3-button w3-black w3-padding-large w3-large w3-margin-top">
+         <a  th:href="@{/list.html}">Check Beaches</a>
+     </div>
+     <div  class="w3-button login-button">
+         <a  th:href="@{/login}">Login</a>
+     </div>
+ </header>
 
-</div>
+ </div>
 
-<!-- Footer -->
+ <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <a href="https://github.com/frvieira/hackathon"><i class="fa fab fa-github"></i></a>
+    <a href="https://facebook.com"><i class="fa fab fa-facebook"></i></i></a>
 
-    <p>Developed by <a href="https://github.com/frvieira/hackathon" target="_blank">Come Along Time</a></p>
+
+    <p>© 2020, Developed by <a href="https://github.com/frvieira/hackathon" target="_blank">Charley Boys</a></p>
 </footer>
 
 <script>

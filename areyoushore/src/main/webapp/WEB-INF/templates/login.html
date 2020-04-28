@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
@@ -26,7 +26,10 @@
                     <label for="fieldPassword" style="left: -18px"  class="label">Password</label>
                 </div>
                 <div class="profile__footer">
-                    <button class="btn">Login</button>
+                    <div  class="btn">
+                        <a  th:href="@{/login}">Login</a>
+                    </div>
+
                 </div>
             </div>
         </div>
