@@ -17,7 +17,6 @@ public class Beach implements Model{
     private String location;
     private Status status;
 
-
     @UpdateTimestamp
     private Date updateTime;
 

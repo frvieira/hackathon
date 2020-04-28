@@ -1,23 +1,16 @@
 package org.academiadecodigo.hackstreetboys.services;
 
-import org.academiadecodigo.hackstreetboys.persistence.dao.JpaBeachDao;
 import org.academiadecodigo.hackstreetboys.persistence.model.Beach;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class BeachService {
+public interface BeachService {
 
-    private JpaBeachDao jpaBeachDao;
+    List<Beach> list();
 
-    @Autowired
-    public void setJpaBeachDao(JpaBeachDao jpaBeachDao) {
-        this.jpaBeachDao = jpaBeachDao;
-    }
+    Beach get(Integer id);
 
-    public List<Beach> list() {
-        return jpaBeachDao.list();
-    }
+    Beach save(Beach beach);
+
+    void delete(Integer id);
 }

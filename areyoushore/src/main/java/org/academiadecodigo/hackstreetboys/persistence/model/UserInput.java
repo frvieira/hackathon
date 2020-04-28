@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "capacityEvaluator")
+@DiscriminatorColumn(name = "userInput")
 public class UserInput implements Model {
 
     @Id

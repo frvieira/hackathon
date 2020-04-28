@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        profile="dev">
 
     <!-- Enable support for JPA annotations -->
@@ -13,12 +13,33 @@
     <!--<constructor-arg value="-web,-webAllowOthers,-webDaemon,-webPort,${dev.h2.port}"/>-->
     <!--</bean>-->
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://${prod.jdbc.host}/${prod.jdbc.database}?useSSL=false"/>
+        <property name="user" value="${prod.jdbc.username}"/>
+        <property name="password" value="${prod.jdbc.password}"/>
+
+        <!-- c3p0 database connection pool management properties -->
+        <property name="minPoolSize" value="${pool.min}"/>
+        <property name="maxPoolSize" value="${pool.max}"/>
+        <property name="acquireIncrement" value="1"/>
+        <property name="maxStatements" value="0"/>
+
+        <!-- destroy idle pool after 300ms -->
+        <property name="idleConnectionTestPeriod" value="300"/>
+
+        <!-- destroy db connection if it fails to login after 7200ms -->
+        <property name="loginTimeout" value="7200"/>
+
+    </bean>
+
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.h2.Driver"/>
         <property name="url" value="jdbc:h2:${dev.h2.location}/${dev.jdbc.database}"/>
         <property name="username" value="${dev.jdbc.username}"/>
         <property name="password" value="${dev.jdbc.password}"/>
-    </bean>
+    </bean>-->
 
     <!--<bean class="java.net.URI" id="dbUrl">
         <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>

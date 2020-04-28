@@ -1,6 +1,8 @@
 package org.academiadecodigo.hackstreetboys.controller;
 
+import org.academiadecodigo.hackstreetboys.persistence.model.Beach;
 import org.academiadecodigo.hackstreetboys.services.BeachService;
+import org.academiadecodigo.hackstreetboys.services.BeachServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +23,12 @@ public class BeachController {
     @RequestMapping(method = RequestMethod.GET, path = {"list", "/", ""})
     public String listBeach(Model model) {
         model.addAttribute("beach", beachService.list());
-        return "beach/list";
+        return "list";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/add")
+    public String addBeach(Model model) {
+        model.addAttribute("beach", new Beach());
+        return "/add";
     }
 }
