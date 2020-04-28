@@ -20,8 +20,19 @@
         <property name="password" value="${dev.jdbc.password}"/>
     </bean>
 
-    <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <!--<bean class="java.net.URI" id="dbUrl">
+        <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
+    </bean>
 
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="org.postgresql.Driver"/>
+        <property name="jdbcUrl" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
+        <property name="user" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
+        <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+    </bean>-->
+
+
+    <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan" value="org.academiadecodigo.hackstreetboys.persistence.model"/>
         <property name="jpaVendorAdapter">
@@ -38,6 +49,11 @@
                 <entry key="hibernate.hbm2ddl.import_files_sql_extractor"
                        value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor"/>
 
+
+
+                <!--<entry key="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>-->
+                <!-- Run as create once to initialize the schema -->
+                <!--<entry key="hibernate.hbm2ddl.auto" value="create"/>-->
             </map>
         </property>
     </bean>

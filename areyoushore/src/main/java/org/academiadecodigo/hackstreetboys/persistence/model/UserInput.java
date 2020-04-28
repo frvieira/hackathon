@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "capacityEvaluator")
-public class UserInput {
+public class UserInput implements Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +17,14 @@ public class UserInput {
     @ManyToOne
     private Beach beach;
 
-    private CapacityEvaluator capacityEvaluator;
+    private Status status;
 
+    @Override
     public Integer getId() {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }
@@ -43,11 +45,11 @@ public class UserInput {
         this.beach = beach;
     }
 
-    public CapacityEvaluator getCapacityEvaluator() {
-        return capacityEvaluator;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setCapacityEvaluator(CapacityEvaluator capacityEvaluator) {
-        this.capacityEvaluator = capacityEvaluator;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "beach")
-public class Beach {
+public class Beach implements Model{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,16 +15,18 @@ public class Beach {
 
     private String beachName;
     private String location;
-    private CapacityEvaluator capacityEvaluator;
+    private Status status;
 
 
     @UpdateTimestamp
     private Date updateTime;
 
+    @Override
     public Integer getId() {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }
@@ -45,12 +47,12 @@ public class Beach {
         this.location = location;
     }
 
-    public CapacityEvaluator getCapacityEvaluator() {
-        return capacityEvaluator;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setCapacityEvaluator(CapacityEvaluator capacityEvaluator) {
-        this.capacityEvaluator = capacityEvaluator;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public Date getUpdateTime() {

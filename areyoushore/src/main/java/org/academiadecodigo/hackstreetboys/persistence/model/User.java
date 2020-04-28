@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,10 +31,12 @@ public class User {
     )
     private List<UserInput> userInput;
 
+    @Override
     public Integer getId() {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }
