@@ -1,6 +1,7 @@
 package org.academiadecodigo.hackstreetboys.persistence.dao;
 
 import org.academiadecodigo.hackstreetboys.persistence.model.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -18,6 +19,7 @@ public class GenericDao<T extends Model> implements Dao<T> {
     public GenericDao(Class<T> modelType) {
         this.modelType = modelType;
     }
+
 
     public void setEm(EntityManager em) {
         this.em = em;

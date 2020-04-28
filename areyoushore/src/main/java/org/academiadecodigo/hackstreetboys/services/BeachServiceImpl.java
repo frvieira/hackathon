@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public class BeachServiceImpl implements BeachService {
 
     private BeachDao beachDao;
 
-
+    @Autowired
     public void setBeachDao(BeachDao beachDao) {
         this.beachDao = beachDao;
     }
@@ -21,5 +21,20 @@ public class BeachServiceImpl implements BeachService {
     @Override
     public List<Beach> list() {
         return beachDao.list();
+    }
+
+    @Override
+    public Beach get(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Beach save(Beach beach) {
+        return null;
+    }
+
+    @Override
+    public void delete(Integer id) {
+
     }
 }
