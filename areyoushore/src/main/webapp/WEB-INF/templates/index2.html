@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="home-bg" lang="en" xmlns:https="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+
+<!--Google Font - Work Sans-->
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <div >
+    <div class="container">
+
+    <header class="header-site w3-center"  style="padding:250px 16px">
+        <img src="../lib/coollogo_com-115821281.png" height="144" width="545"/>
+        <p>Find the Safest Beach Around You</p>
+        <div class="profile__footer">
+            <button class="btn" onclick="window.location.href = 'http://www.google.com/search?q=beach'">Check Beaches</button>
+        </div>
+    </header>
+
+    </div>
+</div>
+<style>
+
+</style>
+
+<script>
+
+
+    document.getElementById('toggleProfile').addEventListener('click', function () {
+        [].map.call(document.querySelectorAll('.profile'), function(el) {
+            el.classList.toggle('profile--open');
+        });
+    });
+</script>
+
+</body>
+</html>
