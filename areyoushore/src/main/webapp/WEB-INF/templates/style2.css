@@ -8,15 +8,19 @@ html {
     height: 100%;
 }
 
-.home-bg {
-    background: url(//lib/beach_2.jpg) no-repeat center center fixed;
+.login-bg {
+    background:  linear-gradient(to bottom, #68EACC 0%, #497BE8 100%) ;
 }
+
+.index-bg {
+    background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+}
+
 
 body {
     position: relative;
     margin: 0;
     min-height: 100%;
-    background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
     color: #777;
 }
 img {
@@ -106,6 +110,7 @@ button {
 .field {
     position: relative;
     margin-bottom: 2em;
+    margin-right: 10px;
 }
 .label {
     position: absolute;
@@ -116,10 +121,10 @@ button {
     transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .input {
-    width: 100%;
+    width: 120%;
     font-size: 100%;
     border: 0;
-    padding: 0;
+    padding: 0px 0px 0px 0px;
     background-color: transparent;
     height: 2rem;
     line-height: 2rem;
