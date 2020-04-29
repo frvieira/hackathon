@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../templates/style2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<!-- Header -->
+<div>
+    <header class="beach-detail w3-center" style="padding:128px 16px" ></header>
+
+
+</div>
+<div class ="container">
+<table class="table" class =>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Beach Name</th>
+        <th>Location</th>
+        <th>Capacity Evaluator</th>
+        <th>Show</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="beach : ${beachs}">
+        <td th:text="${beach.getBeachName()}"></td>
+        <td th:text="${beach.getLocation()}"></td>
+        <td th:text="${beach.getStatus().toString()}"></td>
+        <td th:text="${beach.getUpdateTime()}"></td>
+        <td> <button type="button" class="btn btn-primary">show</button>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+</div>
+</body>
+</html>

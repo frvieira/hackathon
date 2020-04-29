@@ -30,17 +30,19 @@
         <th>Capacity Evaluator</th>
         <th>Show</th>
     </tr>
-    <tr th:each="beach : ${beaches}">
-        <td th:text="${beach.id}"></td>
-        <td th:text="${beach.name}"></td>
-        <td th:text="${beach.location}"></td>
-        <td th:text="${beach.capacityEvaluator}"></td>
-        <td th:text="${beach.updateTime}"></td>
+    <tr th:each="beach : ${beachs}">
+    <tr th:each="beach : ${beachs}">
+        <td th:text="${beach.getBeachName()}"></td>
+        <td th:text="${beach.getLocation()}"></td>
+        <td th:text="${beach.getStatus().toString()}"></td>
+        <td th:text="${beach.getUpdateTime()}"></td>
+
+    </tr>
 
 
-        <td><a class="btn btn-success" th:href="@{'/customer/' + ${customer.id}}">View</a></td>
-        <td><a class="btn btn-warning" th:href="@{'/customer/' + ${customer.id} + '/edit'}">Edit</a></td>
-        <td><a class="btn btn-danger" th:href="@{'/customer/' + ${customer.id} + '/delete'}">Delete</a></td>
+        <td><a class="btn btn-success" th:href="@{'/beach/' + ${beach.id}}">View</a></td>
+        <td><a class="btn btn-warning" th:href="@{'/beach/' + ${beach.id} + '/edit'}">Edit</a></td>
+        <td><a class="btn btn-danger" th:href="@{'/beach/' + ${beach.id} + '/delete'}">Delete</a></td>
 
 
 
