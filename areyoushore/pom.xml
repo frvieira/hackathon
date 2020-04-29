@@ -10,14 +10,7 @@
   <packaging>war</packaging>
   <name>AreYouShore Webapp</name>
 
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-  </properties>
 
   <dependencies>
     <dependency>
@@ -83,6 +76,12 @@
       <version>1.0.0.Final</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>5.2.11.Final</version>
+    </dependency>
+
 
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -111,6 +110,13 @@
     </dependency>
 
 
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.12</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
@@ -124,7 +130,7 @@
           <version>3.8.0</version>
           <configuration>
             <source>1.8</source>
-            <target>10</target>
+            <target>1.8</target>
           </configuration>
         </plugin>
 
