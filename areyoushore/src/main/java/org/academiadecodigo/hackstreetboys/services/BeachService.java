@@ -13,4 +13,6 @@ public interface BeachService {
     Beach save(Beach beach);
 
     void delete(Integer id);
+
+    void deleteAll();
 }

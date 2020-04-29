@@ -29,4 +29,9 @@ public class MockBeachService extends AbstractMockService<Beach> implements Beac
     public void delete(Integer id) {
         modelList.remove(id);
     }
+
+    @Override
+    public void deleteAll() {
+        modelList.clear();
+    }
 }

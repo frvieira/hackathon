@@ -37,4 +37,9 @@ public class BeachServiceImpl implements BeachService {
     public void delete(Integer id) {
 
     }
+
+    @Override
+    public void deleteAll() {
+
+    }
 }

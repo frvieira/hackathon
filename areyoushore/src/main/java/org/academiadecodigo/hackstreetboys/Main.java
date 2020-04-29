@@ -34,5 +34,8 @@ public class Main {
         for(Beach bch : beachService.list()) {
             System.out.println(bch.getBeachName());
         }
+
+        Beach bch26 = beachService.get(1);
+        System.out.println(bch26.getId() + bch26.getBeachName() + bch26.getLocation());
     }
 }

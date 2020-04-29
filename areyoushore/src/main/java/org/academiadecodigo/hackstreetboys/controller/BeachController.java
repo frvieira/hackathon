@@ -48,9 +48,15 @@ public class BeachController {
         beachService.save(beach2);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"list", "/", ""})
-    public String listBeach(Model model) {
+    @RequestMapping(method = RequestMethod.GET, path = {"index", "/", ""})
+    public String homePage() {
+        beachService.deleteAll();
         createBeaches();
+        return "index";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"list"})
+    public String listBeach(Model model) {
         for(Beach beach : beachService.list()) {
             System.out.println(beach.getBeachName());
         }
@@ -80,5 +86,13 @@ public class BeachController {
         Beach savedBeach = beachService.save(beach);
         redirectAttributes.addFlashAttribute("lastAction", "Saved " + savedBeach.getBeachName() + " " + savedBeach.getId());
         return "redirect:list" + savedBeach.getId();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}/details")
+    public String showBeach(@PathVariable Integer id, Model model) {
+
+        Beach beach = beachService.get(id);
+        model.addAttribute("beach", beach);
+        return "details";
     }
 }

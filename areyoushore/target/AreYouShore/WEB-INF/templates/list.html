@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -22,7 +22,6 @@
 </header>
 
 
-<div th:if="${not #lists.isEmpty(beachs)}">
 <table class="table table-striped">
     <tr>
         <th>Id</th>
@@ -32,13 +31,13 @@
         <th>Show</th>
     </tr>
     <tr th:each="beach : ${beachs}">
-        <td th:text="${beach.id}"></td>
         <td th:text="${beach.getBeachName()}"></td>
         <td th:text="${beach.getLocation()}"></td>
+        <td th:text="${beach.getStatus().toString()}"></td>
+        <td th:text="${beach.getUpdateTime()}"></td>
 
     </tr>
 </table>
-</div>
 
 
 

@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <thymeleaf th:replace="header :: header"/>
-    
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+        .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+        .fa-anchor,.fa-coffee {font-size:200px}
+    </style>
 </head>
 <body>
 
 <div class="container">
 
 
-        <div th:object="${beach}">
-            <p>ID: <span th:text="*{id}"> 01 </span>.</p>
-            <p>Name: <span th:text="*{name}"> Costa </span>.</p>
-            <p>Location: <span th:text="*{location}"> Setubal</span>.</p>
+
+
+    <td th:text="${beach.getBeachName()}"></td>
+    <td th:text="${beach.getLocation()}"></td>
+    <td th:text="${beach.getStatus().toString()}"></td>
+    <td th:text="${beach.getUpdateTime()}"></td>
         </div>
 
 
@@ -33,12 +46,6 @@
 
 
 
-    <div class="row">
-        <div class="col-sm-8">
-            <a class="btn btn-primary" th:href="@{'/beach/' + ${beach} + '/list'}">Recipients</a>
-
-        </div>
-    </div>
 
 </div>
 
