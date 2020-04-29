@@ -5,10 +5,14 @@ public enum Status {
     HALF_FULL("If you arrive quickly you can come."),
     EMPTY("It is totally empty. The beach is yours to enjoy.");
 
-    private String warning;
+    private final String warning;
 
     Status(String warning) {
         this.warning = warning;
+    }
+
+    public String getWarning() {
+        return warning;
     }
 
     @Override

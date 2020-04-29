@@ -1,61 +1,247 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <thymeleaf th:replace="header :: header"></thymeleaf>
-    <title>Costa da Caparica</title>
+    <title>AreUSHore</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+        .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+        .fa-anchor,.fa-coffee {font-size:200px}
+    </style>
 </head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../templates/style2.css">
-<link rel="stylesheet" href="../templates/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-    .fa-anchor,.fa-coffee {font-size:200px}
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .closebtn:hover {
+        color: black;
+    }
+    body,h1,h2,h3,h4,h5,h6 {
+        font-family: "Lato", sans-serif
+    }
+    .w3-center{
+        text-align:center!important
+    }
+    .beach-detail {
+        height: 354px;
+        background-image: url("https://bit.ly/3bQeyMl");
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    .alert {
+        padding: 20px;
+        background-color: #f44336; /* Red */
+        color: white;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .alert1 {
+        padding: 20px;
+        background-color: #00ff00; /* Green */
+        color: black;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .alert2 {
+        padding: 20px;
+        background-color: #ffff00; /* Yellow */
+        color: black;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+
+    .w3-padding-64 {
+        padding-top:64px!important;padding-bottom:64px!important
+    }
+    .w3-content {
+        max-width:980px
+    }
+    .w3-twothird {
+        width:66.66666%
+    }
+    .h1-under-title {
+        font-size: 20px;
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .flag-image {
+        height: 300px;
+        width: 250px;
+        float: right;
+        clear: right;
+        position: relative;
+        left: +200px;
+    }
+    .button-check-another {
+        padding: 8px 15px;
+        margin-left: 150px;
+    }
+    .button-check-in {
+        padding: 8px 38px;
+        margin-left: 30px;
+    }
+    .w3-button {
+        border:none;
+        display:inline-block;
+        vertical-align:middle;
+        overflow:hidden;
+        text-decoration:none;
+        color:inherit;
+        background-color:inherit;
+        text-align:center;
+        cursor:pointer;
+        white-space:nowrap
+    }
+    .w3-button {
+        -webkit-touch-callout:none;
+        -webkit-user-select:none;
+        -khtml-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none
+    }
+    .w3-button:disabled {
+        cursor:not-allowed;opacity:0.3
+    }
+    .w3-button:hover {
+        color:#000!important;
+        background-color:white!important
+    }
+    .w3-large {
+        font-size:18px!important
+    }
+    .w3-margin-top {
+        margin-top:30px!important
+    }
+    .footer {
+        height: 100px;
+        margin-top: 140px;
+        background-color: #9e9e9e;
+    }
+    .w3-padding-32 {
+        padding-top:32px!important;padding-bottom:32px!important
+    }
+    .fa-facebook:before {
+        content: "\f09a";
+    }
+    .w3-hover-black:hover {
+        color:#fff!important;background-color:grey!important
+    }
+    .w3-black {
+        background-color: black;
+        color: white;
+    }
+    .margin-text {
+        margin-left: 150px;
+    }
+
+    .fa-facebook-f:before,
+    .w3-content,
+    .w3-row-padding,
+    .w3-row-padding:before,
+    .w3-row-padding:after,
+    .w3-container,
+    .w3-container:after,
+    .w3-container:before,
+    .w3-twothird,
+    .w3-text-grey,
+    .w3-opacity
+
 </style>
 
 <body>
 
 <!-- Header -->
-<header class="beach-detail w3-center" style="padding:128px 16px" ></header>
+<header class="beach-detail w3-center"></header>
 
 <!-- First Grid -->
-<div class="alert">
+<!--<div class="alert">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    RED FLAG! This beach is too full at the moment. Check another!
+    <span th:text="*{beach.status}"></span>
+</div>-->
+
+<div th:switch="${beach.status}">
+    <div th:case="${beach.status.FULL}" class="alert alert-success alert-dismissible" role="alert">
+        <strong><span th:text="${beach.status}"></span></strong>
+    </div>
+    <div th:case="${beach.status.HALF_FULL}" class="alert2 alert-success alert-dismissible" role="alert2">
+        <strong><span th:text="${beach.status}"></span></strong>
+    </div>
+    <div th:case="${beach.status.EMPTY}" class="alert1 alert-success alert-dismissible" role="alert1">
+        <strong><span th:text="${beach.status}"></span></strong>
+    </div>
 </div>
+
+
+
+
 <div class="w3-row-padding w3-padding-64 w3-container">
     <div class="w3-content">
+
+        <div>
+            <td th:switch="${beach.status}">
+                <img th:case="*{beach.status.EMPTY}" class="flag-image" src="https://bit.ly/2Yo5n1E" alt="flag">
+                <img th:case="*{beach.status.HALF_FULL}" class="flag-image" src="https://bit.ly/2VOfCek" alt="flag">
+                <img th:case="*{beach.status.FULL}" class="flag-image" src="https://bit.ly/2W8cJDP" alt="flag">
+                </div>
+            </td>
+            <!--<img class="flag-image" src="https://bit.ly/2W8cJDP" alt="flag">-->
+        </div>
+
         <div class="w3-twothird">
-            <h1 class="h1-title"><span th:text="*{name}"> Costa da Caparica </span></h1>
+            <h1 class="margin-text"><span th:text="*{beach.beachName}"></span></h1>
 
-            <p class="h1-under-title"><span th:text="*{location}"> Setúbal</span></p>
+            <p class="h1-under-title margin-text"><span th:text="*{beach.location}"></span></p>
 
-            <p class="w3-text-grey">
-                <i class="fa far fa-pennant"></i>The Costa da Caparica is a region that characterises modern Portugal, by combining both traditional heritage with forward thinking and liberal attitudes. By day colourful fishing boats are hauled onto the beaches to sell their fresh catch in the local fish market, while by night these same beaches play host to uber-cool beach parties.</p>
+
+
+
+            <p class="w3-text-grey margin-text" >
+                The <span th:text="*{beach.location}"></span> is a region that characterises modern Portugal, by combining both traditional heritage with forward thinking and liberal attitudes. By day colourful fishing boats are hauled onto the beaches to sell their fresh catch in the local fish market, while by night these same beaches play host to uber-cool beach parties.
+            </p>
         </div>
 
-        <div class="w3-third w3-center">
-            <img class="flag-image" src="../lib/red-flag.png" alt="">
+        <div  class="button-check-another w3-button w3-black w3-hover-black  w3-large w3-margin-top">
+            <a  th:href="@{/beach/list.html}">Check Another</a>
         </div>
 
-        <div  class="button-check-another w3-button w3-black  w3-large w3-margin-top">
-            <a  th:href="@{/index.html}">Check Another</a>
+        <div  class="button-check-in w3-button w3-black w3-hover-black  w3-large w3-margin-top">
+            <a  th:href="@{/beach/index.html}">Home</a>
         </div>
-
-        <div  class="button-check-in w3-button w3-black  w3-large w3-margin-top">
-            <a  th:href="@{/index.html}">Check-In</a>
-        </div>
-</div>
+    </div>
 </div>
 
 <footer class="footer w3-container w3-padding-32 w3-center w3-opacity">
     <a  href="https://github.com/frvieira/hackathon"><i class="fa fab fa-github"></i></a>
-    <a href="https://facebook.com"><i class="fa fab fa-facebook"></i></i></a>
+    <a href="https://facebook.com"><i class="fa fab fa-facebook"></i></a>
 
 
     <p class="footer-paragraph">© 2020, Developed by <a href="https://github.com/frvieira/hackathon" target="_blank">Charley Boys</a></p>
