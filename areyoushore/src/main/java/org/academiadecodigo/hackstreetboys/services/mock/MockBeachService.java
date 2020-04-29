@@ -4,7 +4,6 @@ import org.academiadecodigo.hackstreetboys.persistence.model.Beach;
 import org.academiadecodigo.hackstreetboys.services.BeachService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -12,27 +11,22 @@ public class MockBeachService extends AbstractMockService<Beach> implements Beac
 
     @Override
     public List<Beach> list() {
-        return new ArrayList<>(modelMap.values());
+        return modelList;
     }
 
     @Override
     public Beach get(Integer id) {
-        return modelMap.get(id);
+        return modelList.get(id);
     }
 
     @Override
     public Beach save(Beach beach) {
-
-        if(beach.getId() == null) {
-            beach.setId(getNextId());
-        }
-        modelMap.put(beach.getId(), beach);
+        modelList.add(beach);
         return beach;
     }
 
     @Override
     public void delete(Integer id) {
-
-        modelMap.remove(id);
+        modelList.remove(id);
     }
 }

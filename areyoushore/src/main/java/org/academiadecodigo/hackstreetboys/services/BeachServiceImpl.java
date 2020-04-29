@@ -22,4 +22,19 @@ public class BeachServiceImpl implements BeachService {
     public List<Beach> list() {
         return beachDao.list();
     }
+
+    @Override
+    public Beach get(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Beach save(Beach beach) {
+        return null;
+    }
+
+    @Override
+    public void delete(Integer id) {
+
+    }
 }

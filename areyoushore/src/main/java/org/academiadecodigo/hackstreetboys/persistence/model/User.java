@@ -14,6 +14,7 @@ public class User implements Model {
     private UserType userType;
     private String name;
     private String userName;
+    private String password;
 
     @OneToMany(
             // propagate changes on customer entity to account entities
@@ -71,5 +72,13 @@ public class User implements Model {
 
     public void setUserInput(List<UserInput> userInput) {
         this.userInput = userInput;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
