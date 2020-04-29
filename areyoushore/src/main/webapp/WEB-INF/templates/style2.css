@@ -16,8 +16,6 @@ body {
     position: relative;
     margin: 0;
     min-height: 100%;
-    background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
-    color: #777;
 }
 img {
     vertical-align: middle;
@@ -100,7 +98,13 @@ button {
 .profile__footer {
     padding-top: 1em;
 }
-
+.button-check-another {
+    padding: 8px 15px;
+}
+.button-check-in {
+    padding: 8px 38px;
+    margin-left: 30px;
+}
 
 /* Form */
 .field {
@@ -131,6 +135,16 @@ button {
     outline: 0;
     border-color: #ccc;
 }
+.h1-under-title {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+.flag-image {
+    height: 300px;
+    width: 250px;
+    padding-left: 50px;
+}
 
 /* Using required and a faux pattern to see if input has text from http://stackoverflow.com/questions/16952526/detect-if-an-input-has-text-in-it-using-css */
 .input:focus + .label,
@@ -160,6 +174,42 @@ input:valid + .label {
 .btn:hover,
 .btn:focus {
     background: #A678E2;
+}
+.beach-detail {
+    height: 354px;
+    background-image: url("../lib/costa-da-caparica-8.jpg");
+    text-align: center;
+    margin-bottom: 70px;
+}
+.footer {
+    height: 100px;
+    margin-top: 140px;
+    background-color: #9e9e9e;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
 }
 
 
