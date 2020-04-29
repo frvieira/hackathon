@@ -1,13 +1,13 @@
 package org.academiadecodigo.hackstreetboys.persistence.dao;
 
 import org.academiadecodigo.hackstreetboys.persistence.model.Model;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.*;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
+
 
 public class GenericDao<T extends Model> implements Dao<T> {
 
