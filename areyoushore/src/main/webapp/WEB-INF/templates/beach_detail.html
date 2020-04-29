@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf th:replace="header :: header"></thymeleaf>
+    <title>Costa da Caparica</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../templates/style2.css">
+<link rel="stylesheet" href="../templates/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+</style>
+
+<body>
+
+<!-- Header -->
+<header class="beach-detail w3-center" style="padding:128px 16px" ></header>
+
+<!-- First Grid -->
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    RED FLAG! This beach is too full at the moment. Check another!
+</div>
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-twothird">
+            <h1 class="h1-title"><span th:text="*{name}"> Costa da Caparica </span></h1>
+
+            <p class="h1-under-title"><span th:text="*{location}"> Setúbal</span></p>
+
+            <p class="w3-text-grey">
+                <i class="fa far fa-pennant"></i>The Costa da Caparica is a region that characterises modern Portugal, by combining both traditional heritage with forward thinking and liberal attitudes. By day colourful fishing boats are hauled onto the beaches to sell their fresh catch in the local fish market, while by night these same beaches play host to uber-cool beach parties.</p>
+        </div>
+
+        <div class="w3-third w3-center">
+            <img class="flag-image" src="../lib/red-flag.png" alt="">
+        </div>
+
+        <div  class="button-check-another w3-button w3-black  w3-large w3-margin-top">
+            <a  th:href="@{/index.html}">Check Another</a>
+        </div>
+
+        <div  class="button-check-in w3-button w3-black  w3-large w3-margin-top">
+            <a  th:href="@{/index.html}">Check-In</a>
+        </div>
+</div>
+</div>
+
+<footer class="footer w3-container w3-padding-32 w3-center w3-opacity">
+    <a  href="https://github.com/frvieira/hackathon"><i class="fa fab fa-github"></i></a>
+    <a href="https://facebook.com"><i class="fa fab fa-facebook"></i></i></a>
+
+
+    <p class="footer-paragraph">© 2020, Developed by <a href="https://github.com/frvieira/hackathon" target="_blank">Charley Boys</a></p>
+</footer>
+
+
+</body>
+</html>
