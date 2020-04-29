@@ -8,13 +8,13 @@
   <artifactId>areyoushore</artifactId>
   <version>0.0.1</version>
   <packaging>war</packaging>
-  <name>AreYouShore Webapp</name>
+  <name>areyoushore</name>
 
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -90,7 +90,7 @@
   </dependencies>
 
   <build>
-    <finalName>AreYouShore</finalName>
+    <finalName>areyoushore</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
 
@@ -144,12 +144,20 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.0.2</version>
           <executions>
             <execution>
-              <id>copy-dependencies</id>
               <phase>package</phase>
-              <goals><goal>copy-dependencies</goal></goals>
+              <goals><goal>copy</goal></goals>
+              <configuration>
+                <artifactItems>
+                  <artifactItem>
+                    <groupId>com.heroku</groupId>
+                    <artifactId>webapp-runner</artifactId>
+                    <version>9.0.30.0</version>
+                    <destFileName>webapp-runner.jar</destFileName>
+                  </artifactItem>
+                </artifactItems>
+              </configuration>
             </execution>
           </executions>
         </plugin>
