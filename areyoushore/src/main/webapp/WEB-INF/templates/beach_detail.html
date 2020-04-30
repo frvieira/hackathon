@@ -36,6 +36,13 @@
     body,h1,h2,h3,h4,h5,h6 {
         font-family: "Lato", sans-serif
     }
+
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial,sans-serif;
+        text-decoration: none;
+    }
+
     .w3-center{
         text-align:center!important
     }
@@ -103,10 +110,12 @@
     .button-check-another {
         padding: 8px 15px;
         margin-left: 150px;
+        text-decoration:none;
     }
     .button-check-in {
         padding: 8px 38px;
         margin-left: 30px;
+        text-decoration:none;
     }
     .w3-button {
         border:none;
@@ -118,7 +127,8 @@
         background-color:inherit;
         text-align:center;
         cursor:pointer;
-        white-space:nowrap
+        white-space:nowrap;
+        font-family: "Segoe UI", Arial,sans-serif;
     }
     .w3-button {
         -webkit-touch-callout:none;
@@ -132,8 +142,8 @@
         cursor:not-allowed;opacity:0.3
     }
     .w3-button:hover {
-        color:#000!important;
-        background-color:white!important
+        color:black!important;
+        background-color:grey!important
     }
     .w3-large {
         font-size:18px!important
@@ -161,6 +171,17 @@
     }
     .margin-text {
         margin-left: 150px;
+    }
+
+    .beach-footer {
+        text-decoration: none;
+        font-family: "Segoe UI", Arial,sans-serif;
+    }
+
+    .button-text {
+        text-decoration: none;
+        font-family: "Segoe UI", Arial,sans-serif;
+        color: white;
     }
 
     .fa-facebook-f:before,
@@ -223,28 +244,33 @@
 
 
 
-
-            <p class="w3-text-grey margin-text" >
-                The <span th:text="*{beach.location}"></span> is a region that characterises modern Portugal, by combining both traditional heritage with forward thinking and liberal attitudes. By day colourful fishing boats are hauled onto the beaches to sell their fresh catch in the local fish market, while by night these same beaches play host to uber-cool beach parties.
+            <td th:switch="${beach.location}">
+            <p th:case="'Costa da Caparica'" class="w3-text-grey margin-text" >
+            <span th:text="*{beach.location}"></span> is a region that characterises modern Portugal, by combining both traditional heritage with forward thinking and liberal attitudes. By day colourful fishing boats are hauled onto the beaches to sell their fresh catch in the local fish market, while by night these same beaches play host to uber-cool beach parties.
             </p>
+                <p th:case="'Alcácer do Sal'" class="w3-text-grey margin-text" >
+                    <span th:text="*{beach.location}"></span>, graciously laid out over the right bank of the Sado river and rising up a gentle slope, has been settled since the earliest of times. Archaeological remains have been found that date back to the Neolithic period not to mention evidence of Greek, Phoenician and other Mediterranean peoples having passed through.
+                </p>
+                <p th:case="'Ericeira'" class="w3-text-grey margin-text" >
+                    <span th:text="*{beach.location}"></span> is a charming Portuguese fishing town that is situated along a coastline of outstanding surfing beaches. This powerful and reliable surf has transformed peaceful Ericeira into a surfing mecca; boasting both a chilled daytime scene and a lively nightlife, along with excellent accommodation options and top-rated tourist facilities.
+                </p>
+                <p th:case="'Sintra'" class="w3-text-grey margin-text" >
+                    <span th:text="*{beach.location}"></span>, the Moon Hill, is a place full of magic and mystery, where Nature and Man have combined in such a perfect symbiosis that UNESCO has granted it Word Heritage Site status. Whatever your plan, a good suggestion is always to start from the historic centre, after an invigorating breakfast to prepare for a full day.
+                </p>
         </div>
 
         <div  class="button-check-another w3-button w3-black w3-hover-black  w3-large w3-margin-top">
-            <a  th:href="@{/beach/list.html}">Check Another</a>
+            <a class="button-text" th:href="@{/list.html}">Check Another</a>
         </div>
 
-        <div  class="button-check-in w3-button w3-black w3-hover-black  w3-large w3-margin-top">
-            <a  th:href="@{/beach/index.html}">Home</a>
+        <div class="button-check-in w3-button w3-black w3-hover-black  w3-large w3-margin-top">
+            <a class="button-text" th:href="@{/index.html}">Home</a>
         </div>
     </div>
 </div>
 
 <footer class="footer w3-container w3-padding-32 w3-center w3-opacity">
-    <a  href="https://github.com/frvieira/hackathon"><i class="fa fab fa-github"></i></a>
-    <a href="https://facebook.com"><i class="fa fab fa-facebook"></i></a>
-
-
-    <p class="footer-paragraph">© 2020, Developed by <a href="https://github.com/frvieira/hackathon" target="_blank">Charley Boys</a></p>
+    <p class="footer-paragraph">© 2020, Developed by <a class="beach-footer" href="https://github.com/frvieira/hackathon" target="_blank">Charley Boys</a></p>
 </footer>
 
 

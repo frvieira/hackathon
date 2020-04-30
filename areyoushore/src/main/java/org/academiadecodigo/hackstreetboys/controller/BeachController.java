@@ -1,7 +1,7 @@
 package org.academiadecodigo.hackstreetboys.controller;
 
-import org.academiadecodigo.hackstreetboys.persistence.model.Beach;
-import org.academiadecodigo.hackstreetboys.persistence.model.Status;
+import org.academiadecodigo.hackstreetboys.model.Beach;
+import org.academiadecodigo.hackstreetboys.model.Status;
 import org.academiadecodigo.hackstreetboys.services.BeachService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/beach")
 public class BeachController {
 
     private BeachService beachService;
@@ -143,41 +142,17 @@ public class BeachController {
         beachService.save(beach18);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"index", "/", ""})
+    @RequestMapping(method = RequestMethod.GET)
     public String homePage() {
         beachService.deleteAll();
         createBeaches();
         return "index";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"list"})
+    @RequestMapping(method = RequestMethod.GET, path = {"/list"})
     public String listBeach(Model model) {
         model.addAttribute("beachs", beachService.list());
         return "list";
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/add")
-    public String addBeach(Model model) {
-        model.addAttribute("beach", new Beach());
-        return "add-update";
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/{id}/edit")
-    public String editBeach(@PathVariable Integer id, Model model) {
-        model.addAttribute("beach", beachService.get(id));
-        return "/add";
-    }
-
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
-    public String saveBeach(@Valid @ModelAttribute("beach") Beach beach, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-
-        if (bindingResult.hasErrors()) {
-            return "add-update";
-        }
-
-        Beach savedBeach = beachService.save(beach);
-        redirectAttributes.addFlashAttribute("lastAction", "Saved " + savedBeach.getBeachName() + " " + savedBeach.getId());
-        return "redirect:add-update" + savedBeach.getId();
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}/details")

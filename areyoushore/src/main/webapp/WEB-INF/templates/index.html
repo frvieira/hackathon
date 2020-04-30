@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<title>AreUSHore</title>
+<title>AreYouSHore</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="shortcut icon" type="image/png" href="https://bit.ly/2yPTLKq"/>
 
 <style>
@@ -15,7 +13,11 @@
     body, h1, h2, h3, h4, h5, h6 {
         font-family: "Lato", sans-serif
     }
-
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial,sans-serif;
+        text-decoration: none;
+    }
     .content {
         max-width: 500px;
         margin: auto;
@@ -64,7 +66,7 @@
         cursor: pointer;
         white-space: nowrap;
         position: relative;
-        left: +620px;
+        left: +580px;
 
     }
 
@@ -81,7 +83,7 @@
         user-select: none;
         color: white;
         background-color: black;
-
+        text-decoration: none;
     }
 
     .w3-button:disabled {
@@ -90,8 +92,9 @@
     }
 
     .w3-button:hover {
-        color: #000 !important;
-        background-color: white !important
+        color: black !important;
+        background-color: grey !important
+
     }
 
     .footer-pos {
@@ -102,6 +105,7 @@
     }
     .footer-paragraph {
         color: black;
+        font-family: "Segoe UI", Arial,sans-serif;
         text-decoration: none;
     }
 
@@ -109,6 +113,13 @@
         background-color: black;
         color: white;
     }
+
+    .button-text {
+        text-decoration: none;
+        color: white;
+        font-family: "Segoe UI", Arial,sans-serif;
+    }
+
     .login-button {
         color: white;
         display: inline-block;
@@ -132,6 +143,9 @@
         cursor: not-allowed;
         opacity: 0.3
     }
+    .git-link {
+        text-decoration: none;
+    }
 
 </style>
 <body>
@@ -147,7 +161,7 @@
     <p class="frontpage-slogan ">FIND THE SAFEST BEACH AROUND YOU</p>
 
     <div class="w3-button  w3-black w3-padding-large w3-large">
-        <a th:href="@{/beach/list.html}">Check Beaches</a>
+        <a class="button-text" th:href="@{list.html}">Check Beaches</a>
     </div>
 
 
@@ -156,12 +170,9 @@
 
 <!-- Footer -->
 <footer class="footer-pos footer-paragraph">
-    <a href="https://github.com/frvieira/hackathon"><i class="fa fab fa-github"></i></a>
-    <a href="https://facebook.com"><i class="fa fab fa-facebook"></i></a>
 
+    <p>© 2020, Developed by <a class="git-link" href="https://github.com/frvieira/hackathon" target="_blank">Charley Boys</a></p>
 
-    <p>© 2020, Developed by <a href="https://github.com/frvieira/hackathon" target="_blank">Charley
-        Boys</a></p>
 </footer>
 </body>
 </html>

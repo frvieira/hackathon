@@ -23,7 +23,7 @@
             <tr th:each="beach : ${beachs}">
                 <td th:text="${beach.beachName}"></td>
                 <td th:text="${beach.location}"></td>
-                <td><a class="btn btn-success" th:href="@{'/beach/' + ${beach.getId() - 1} + '/details'}">Show</a></td>
+                <td><a class="btn btn-success" th:href="@{${beach.getId() - 1} + '/details'}">Show</a></td>
             </tr>
         </table>
     </div>

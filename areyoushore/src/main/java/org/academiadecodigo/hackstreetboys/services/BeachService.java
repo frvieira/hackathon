@@ -1,6 +1,6 @@
 package org.academiadecodigo.hackstreetboys.services;
 
-import org.academiadecodigo.hackstreetboys.persistence.model.Beach;
+import org.academiadecodigo.hackstreetboys.model.Beach;
 
 import java.util.List;
 
@@ -15,4 +15,5 @@ public interface BeachService {
     void delete(Integer id);
 
     void deleteAll();
+
 }
